@@ -9,10 +9,10 @@ def base_url():
 def api_session(base_url, timeout):
     session = requests.Session()
     session.base_url = base_url
-    session.default_timeout = timeou
+    session.default_timeout = timeout
     yield session
     session.close()
 
 @pytest.fixture()
-def timeout(base_url):
+def timeout():
     return 5
